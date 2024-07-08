@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+    <name>Active Campaign Form Module</name>
+    <author>Allan Schweitz</author>
+    <version>4.0.0</version>
+    <description>Module for display an Active Campaign form.</description>
+    <namespace>Joomla\Module\ActiveCampaign</namespace>
+    <files>
+        <filename>mod_active_campaign.xml</filename>
+        <filename module="mod_active_campaign">mod_active_campaign.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <folder>forms</folder>
+    </files>
+    <config>
+      <fields name="params">
+        <fieldset name="basic">
+          <field name="account_url" type="text" label="Account URL" />
+          <field name="api_key" type="text" label="API Key" />
+          <field name="form_id" type="text" label="Form ID" />
+          <field name="btn_class" type="text" label="Button class" />
+          <field name="replacements" type="subform" formsource="modules/mod_active_campaign/forms/replace.xml" multiple="true" min="0" max="100" groupByFieldset="false" layout="joomla.form.field.subform.repeatable-table" label="Replace list label" description="Labels to replaced."/>
+          <field name="style_override" type="textarea" label="Style override"/>
+        </fieldset>
+      </fields>
+    </config>
+</extension>
